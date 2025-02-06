@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 15:14:37 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/06 15:53:31 by cpoulain         ###   ########.fr       */
+/*   Created: 2025/02/06 07:36:28 by cpoulain          #+#    #+#             */
+/*   Updated: 2025/02/06 16:00:30 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie::Zombie(std::string s) : _name(s)
-{
-	std::cout << "We are here to invade you. Sincerely, " << this->_name << "\n" << std::endl;
-}
+#include <string>
+#include <iostream>
 
-Zombie::~Zombie()
+class Zombie
 {
-	std::cout << this->_name << " got sent to outer space.\n" << std::endl;
-}
+	private:
+		std::string	_name;
+	public:
+		
+	// Constructors
+		Zombie();
 
-void	Zombie::announce(void)const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
-}
+	// Destructors
+		~Zombie();
+
+	// Public methods
+		void	announce(void)const;
+		void	set_name(std::string name);
+};
+
+Zombie	*zombieHorde(int N, std::string name);
+
+#endif

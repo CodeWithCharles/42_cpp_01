@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 15:14:37 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/06 15:53:31 by cpoulain         ###   ########.fr       */
+/*   Created: 2025/02/06 14:47:12 by cpoulain          #+#    #+#             */
+/*   Updated: 2025/02/06 16:04:09 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string s) : _name(s)
+int	main(void)
 {
-	std::cout << "We are here to invade you. Sincerely, " << this->_name << "\n" << std::endl;
-}
+	Zombie	*horde;
+	int		zombie_amount = 10;
 
-Zombie::~Zombie()
-{
-	std::cout << this->_name << " got sent to outer space.\n" << std::endl;
-}
-
-void	Zombie::announce(void)const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
+	horde = zombieHorde(zombie_amount, "Horde Member");
+	if (horde == NULL)
+		return (1);
+	for (int i = 0; i < zombie_amount; i++)
+		horde[i].announce();
+	delete[] horde;
+	horde = zombieHorde(0, "Failed");
+	return (0);
 }

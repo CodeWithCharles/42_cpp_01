@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:27:30 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/10 12:58:46 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/02/20 10:38:33 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,24 @@ void	Harl::complain(std::string level)
 	std::string	complaints[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int	i = 0;
-	int	complaints_found = 0;
 	for (; i < 4; i++)
 	{
 		if (complaints[i] == level)
-		{
-			complaints_found = 1;
 			break ;
-		}
 	}
-	if (!complaints_found)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-	else
-		while (i < 4)
-			(this->*levelFunctions[i++])();
+	switch (i)
+	{
+		case(0):
+			(this->*levelFunctions[0])();
+		case(1):
+			(this->*levelFunctions[1])();
+		case(2):
+			(this->*levelFunctions[2])();
+		case(3):
+			(this->*levelFunctions[3])();
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break ;
+	}
 }

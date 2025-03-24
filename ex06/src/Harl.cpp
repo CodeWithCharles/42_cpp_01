@@ -6,17 +6,17 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:27:30 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/20 10:38:33 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:11:48 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Harl.hpp"
 
 std::string	Harl::_verbose_level[4] = {
-	"[DEBUG]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI really do!",
-	"[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put enough bacon in my burger!\nIf you did, I wouldn’t be asking for more!",
-	"[WARNING]\nI think I deserve to have some extra bacon for free.\nI’ve been coming for years whereas you started working here since last month.",
-	"[ERROR]\nThis is unacceptable! I want to speak to the manager now."
+	"[DEBUG]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI really do!\n",
+	"[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put enough bacon in my burger!\nIf you did, I wouldn’t be asking for more!\n",
+	"[WARNING]\nI think I deserve to have some extra bacon for free.\nI’ve been coming for years whereas you started working here since last month.\n",
+	"[ERROR]\nThis is unacceptable! I want to speak to the manager now.\n"
 };
 
 // Constructor & destructor
